@@ -39,7 +39,7 @@ void search2DArray(){
         }
     }
 
-    cout<<"Target Not found";
+    cout<<"Target Not Found";
 }
 
 int main(){
