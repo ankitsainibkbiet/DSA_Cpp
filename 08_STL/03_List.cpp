@@ -9,6 +9,8 @@ int main(){
     li.push_front(3);
     li.push_front(2);
     li.push_front(1);
+    
+    // cout<<li[2];   not allowed
 
     int n = li.size();
     cout<<n<<endl;
@@ -16,5 +18,6 @@ int main(){
     for(int val : li){
         cout<<val<<" ";
     }
+
     return 0;
 }
