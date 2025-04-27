@@ -28,7 +28,7 @@ vector<int> findMissingAndRepeatedValues(vector<vector<int>>grid) {
 }
 
 int main(){
-    vector<vector<int>> grid = {{1,3}, {2,2}};
+    vector<vector<int>> grid = {{1,3,2}, {4,8,9}, {6,3,5}};
     vector<int> ans = findMissingAndRepeatedValues(grid);
     cout<<ans[0]<<","<<ans[1];
     return 0;
