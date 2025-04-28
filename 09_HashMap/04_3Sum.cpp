@@ -66,7 +66,7 @@ void threeSumOptimize(){
 }
 
 int main() {
-    // threeSumBruteForce();
-    threeSumOptimize();
+    // threeSumBruteForce();   // O(n^3 * log(n))
+    threeSumOptimize();   // O(n^2 * log(n))
     return 0;
 }
