@@ -1,13 +1,13 @@
 #include<iostream>
 #include<vector>
 #include<set>
+#include<unordered_set>
 #include<algorithm>
 using namespace std;
 
 void threeSumBruteForce(){
     vector<int> vec = {-1,0,1,2,-1,-4};
-    int sum = 0, n = vec.size();
-    int row = 0, column = 0;
+    int n = vec.size();
     vector<vector<int>> matrix;
     set<vector<int>> s;
 
@@ -35,11 +35,38 @@ void threeSumBruteForce(){
 }
 
 void threeSumOptimize(){
+    vector<int> vec = {-1,2,-2,0,1,-4};
+    int n = vec.size();
+    vector<vector<int>> matrix;
+    unordered_set<int> s1;
+    set<vector<int>> s2;
 
+    for(int i=0; i<n; i++){
+        s1.clear(); 
+        for(int j=i+1; j<n; j++){
+            int target = -(vec[i] + vec[j]); 
+            if(s1.find(target) != s1.end()){
+                vector<int> temp = {vec[i], vec[j], target};
+                sort(temp.begin(), temp.end());
+                if(s2.find(temp) == s2.end()){
+                    s2.insert(temp);
+                    matrix.push_back(temp);
+                }
+            }
+            s1.insert(vec[j]);
+        }
+    }
+
+    for(vector<int> val : matrix){
+        for(int ans : val){
+            cout<<ans<<" ";
+        }
+        cout<<endl;
+    }
 }
 
 int main() {
-    threeSumBruteForce();
+    // threeSumBruteForce();
     threeSumOptimize();
     return 0;
 }
