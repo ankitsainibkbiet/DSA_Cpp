@@ -67,6 +67,6 @@ void threeSumHashing(){
 
 int main() {
     // threeSumBruteForce();   // O(n^3 * log(n))
-    // threeSumHashmap();   // O(n^2 * log(n))
+    // threeSumHashing();   // O(n^2 * log(n))
     return 0;
 }
