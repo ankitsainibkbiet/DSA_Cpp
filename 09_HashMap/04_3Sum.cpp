@@ -42,7 +42,7 @@ void threeSumOptimize(){
     set<vector<int>> s2;
 
     for(int i=0; i<n; i++){
-        s1.clear(); 
+        s1.clear(); // to delete the no for every i to remove backward elements
         for(int j=i+1; j<n; j++){
             int target = -(vec[i] + vec[j]); 
             if(s1.find(target) != s1.end()){
@@ -53,7 +53,7 @@ void threeSumOptimize(){
                     matrix.push_back(temp);
                 }
             }
-            s1.insert(vec[j]);
+            s1.insert(vec[j]); // we always need the number rather then i and j so this work
         }
     }
 
