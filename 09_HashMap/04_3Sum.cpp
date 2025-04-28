@@ -34,7 +34,7 @@ void threeSumBruteForce(){
     }
 }
 
-void threeSumOptimize(){
+void threeSumHashing(){
     vector<int> vec = {-1,2,-2,0,1,-4};
     int n = vec.size();
     vector<vector<int>> matrix;
@@ -67,6 +67,6 @@ void threeSumOptimize(){
 
 int main() {
     // threeSumBruteForce();   // O(n^3 * log(n))
-    threeSumOptimize();   // O(n^2 * log(n))
+    // threeSumHashing();   // O(n^2 * log(n))
     return 0;
 }
