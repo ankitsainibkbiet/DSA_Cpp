@@ -68,13 +68,42 @@ void threeSumHashing(){
 }
 
 void threeSumTwoPointer(){
-    vector<int> vec = {-1,2,-2,0,1,-4};
+    vector<int> vec = {-1, 0, 1, 2, -1, -4}; 
     int n = vec.size();
     vector<vector<int>> matrix;
+
+    sort(vec.begin(), vec.end());
+
+    for(int i=0; i<n; i++){
+        if(i > 0 && vec[i] == vec[i-1]){  // condition one to remove duplicates
+            continue;
+        }
+        int j = i+1, k = n-1;
+        while(j < k){
+            int sum = vec[i]+vec[j]+vec[k];
+            if(sum < 0){
+                j++;
+            }else if(sum > 0){
+                k--;
+            }else{
+                matrix.push_back({vec[i], vec[j], vec[k]}); // make vector of each number then push
+                j++; k--;
+                while(j < k && vec[j] == vec[j-1]) j++; // condition two to remove duplicates
+            }
+        }
+    }
+
+    for(auto val : matrix){
+        for(auto ans : val){
+            cout<<ans<<",";
+        }
+        cout<<endl;
+    }
 }
 
 int main() {
     // threeSumBruteForce();   // O(n^3 * log(n))
-    threeSumHashing();   // O(n^2 * log(n))
+    // threeSumHashing();       // O(n^2 * log(n))
+    threeSumTwoPointer();     // O(n^2)
     return 0;
 }
