@@ -3,59 +3,51 @@
 #include<algorithm>
 using namespace std;
 
-vector<int> withNine(vector<int> vec, vector<int> ans, int n){
+vector<int> withNine(vector<int> &vec, int n){
+    bool change = true;
     if(n == 1){
-        ans.push_back(1);
-        ans.push_back(0);
-        return ans;
+        vec[0] = 1;
+        vec.push_back(0);
+        return vec;
     }
-
     for(int i=n-1; i>=0; i--){
-        if(vec[i] == 9){
-            ans.push_back(0);
-        }else if(vec[i] != 9 && vec[i+1] == 9){
-            ans.push_back(vec[i]+1);
+        if(vec[i] == 9 && change){
+            vec[i] = 0;
+        }else if(vec[i] != 9 && vec[i+1] == 0 && change){
+            vec[i] = vec[i]+1;
+            change = false;
+        }else{
+            continue;
         }
     }
-
-    bool insertOne = false;
-    if(vec[0] == 9) insertOne = true;
-
-    if(insertOne){
-        ans.push_back(1);
+    if(vec[0] == 0 && change){
+        vec[0] = 1;
+        vec.push_back(0);
     }
-
-    reverse(ans.begin(), ans.end());
-
-    return ans;
+    return vec;
 }
 
-vector<int> withoutNine(vector<int> vec, vector<int> ans, int n){
+vector<int> withoutNine(vector<int> &vec, int n){
     for(int i=0; i<n; i++){
         if(i != n-1){
-            ans.push_back(vec[i]);
+            continue;
         }else{
-            ans.push_back(vec[n-1] + 1);
+            vec[i] = vec[n-1] + 1;
         }
     }
-
-    return ans;
+    return vec;
 }
 
 int main() {
-    vector<int> vec = {1,9,9,1};
-    vector<int> ans;
+    vector<int> vec = {9,9};
     int n = vec.size();
-
     if(vec[n-1] == 9){
-        ans = withNine(vec, ans, n);
+        withNine(vec, n);
     }else{
-        ans = withoutNine(vec, ans, n);
+        withoutNine(vec, n);
     }
-
-    for(int val : ans){
+    for(int val : vec){
         cout<<val;
     }
-
     return 0;
 }
