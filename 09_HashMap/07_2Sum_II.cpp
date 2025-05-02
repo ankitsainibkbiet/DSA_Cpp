@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-    vector<int> numbers = {2,7,11,15};
+    vector<int> numbers = {0,2,7,11,15};
     vector<int> ans;
     int n = numbers.size(), start = 0, end = n-1, target = 9;
 
@@ -15,8 +15,8 @@ int main() {
         }else if(sum > target){
             end--;
         }else{
-            ans.push_back(start);
-            ans.push_back(end);
+            ans.push_back(start+1);
+            ans.push_back(end+1);
             break;
         }
     }
