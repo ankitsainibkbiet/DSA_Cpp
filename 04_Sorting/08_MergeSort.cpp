@@ -46,7 +46,7 @@ int main(){
 
     mergeSort(arr, 0, end);
 
-    for(int k=0; k<7; k++){
+    for(int k=0; k<sizeof(arr)/4; k++){
         cout<<arr[k]<<" ";
     }
     
