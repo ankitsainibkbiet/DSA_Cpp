@@ -27,7 +27,36 @@ void bitManupulationSubset(){
     }
 }
 
+void subsetRecursion(vector<int> &nums, vector<vector<int>> &ans, vector<int> &tempSubset, int n, int i){
+    if(i == n){
+        ans.push_back(tempSubset);
+        return;
+    }
+
+    tempSubset.push_back(nums[i]);  // including
+    subsetRecursion(nums, ans, tempSubset, n, i+1);
+
+    tempSubset.pop_back();  // backtracking
+    subsetRecursion(nums, ans, tempSubset, n, i+1);  // exculding 
+}
+
 int main(){
-    bitManupulationSubset();
+    vector<int> nums = {1,2,3};
+    vector<int> tempSubset;
+    vector<vector<int>> ans;
+    int n = nums.size();
+
+    //bitManupulationSubset();
+    subsetRecursion(nums, ans, tempSubset, n ,0);
+
+    for(auto val : ans){
+        cout<<"{ ";
+        for(auto key : val){
+            cout<<key<<" ";
+        }
+        cout<<"}";
+        cout<<endl;
+    }
+
     return 0;
 }
