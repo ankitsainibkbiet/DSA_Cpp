@@ -29,9 +29,9 @@ void stringPermutation(string& str, int n, vector<string>& ans, int index){
 }
 
 int main(){
-    vector<int> nums = {1,2,3};
-    int n = nums.size();
-    vector<vector<int>> ans;
+    // vector<int> nums = {1,2,3};
+    // int n = nums.size();
+    // vector<vector<int>> ans;
     // permutation(nums, ans, n, 0);
     // for(auto val: ans){
     //     for(auto key: val){
