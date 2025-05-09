@@ -7,7 +7,7 @@ public:
     string name;
     string college;
 
-    Student(){  // constuctor do not have any return type , non-perameterized
+    Student(){  // non perameterized  (constuctor do not have any return type)
         college = "BKBIET";
     }
 
@@ -17,7 +17,7 @@ public:
         college = c;
     }
 
-    Student(Student &obj){
+    Student(Student &obj){  // copy constructor
         cout<<"Custom Copy Constructor"<<endl;
         ID = obj.ID;
         name = obj.name;
