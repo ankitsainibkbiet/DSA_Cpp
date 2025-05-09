@@ -35,7 +35,7 @@ class boy : public human, public student01{  // multiple inheritence
 public:
     string color;
 
-    boy() : human(), student01(){   // calling parent class constructor from the derived class
+    boy() : human(), student01(){   // passing values to parent class constructor from the derived class
         cout<<"Boy class constructor"<<endl;
     }
 };
