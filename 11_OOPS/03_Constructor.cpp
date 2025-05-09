@@ -17,6 +17,13 @@ public:
         college = c;
     }
 
+    Student(Student &obj){
+        cout<<"Custom Copy Constructor"<<endl;
+        ID = obj.ID;
+        name = obj.name;
+        college = obj.name;
+    }
+
     void getInfo(){
         cout<<"ID = "<<ID<<endl;
         cout<<"Name = "<<name<<endl;
@@ -26,6 +33,7 @@ public:
 
 int main(){
     Student s1(21, "Ankit", "BKBIET");  // every time we make a object constructor is called automatically
-    s1.getInfo();
+    Student s2(s1);
+    s2.getInfo();
     return 0;
 }
