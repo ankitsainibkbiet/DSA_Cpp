@@ -109,12 +109,25 @@ public:
        
     }
 
+    bool search(int val){
+        Node* temp = head;
+        if(head == NULL) return false;
+        while(temp != NULL){
+            if(temp->data == val){
+                return true;
+            }
+            temp = temp->next;  
+        }
+        return false;
+    }
+
     void print(){
         Node* temp = head;
         while(temp != NULL){
             cout<<temp->data<<" ";
             temp = temp->next;
         }
+        cout<<endl;
         return;
     }
 
@@ -123,14 +136,15 @@ public:
 int main(){
     List LL;
 
-    LL.insert(5,0);
-    LL.insert(8,0);
-    LL.insert(9,0);
-    LL.insert(19,0);
-    LL.insert(119,4);
-    LL.insert(119,1);
-
+    LL.push_back(1);
+    LL.push_back(2);
+    LL.push_back(3);
+    LL.push_back(4);
+    LL.push_back(5);
+  
     LL.print();
+
+    cout<<LL.search(5);
 
     return 0;
 }
