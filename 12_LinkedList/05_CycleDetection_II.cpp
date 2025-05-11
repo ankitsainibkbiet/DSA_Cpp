@@ -19,7 +19,7 @@ public:
             fast = fast->next->next;
             if(slow == fast){
                 isCycle = true;
-                break;
+                break;  // this is important to preseve the meeting position 
             }
         }
 
