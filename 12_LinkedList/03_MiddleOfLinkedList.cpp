@@ -11,7 +11,7 @@ struct ListNode {
  
 class Solution {
 public:
-    ListNode* middleNode(ListNode* head) {
+    ListNode* middleNodeBrute(ListNode* head) {
         ListNode* temp = head;
         int middle = 1;
 
@@ -28,5 +28,17 @@ public:
         }
 
         return temp;
+    }
+
+    ListNode* SlowFastApproach(ListNode* head){
+        ListNode*  slow = head;
+        ListNode*  fast = head;
+
+        while(fast != NULL && fast->next == NULL){
+            slow = slow->next;
+            fast = fast->next->next;
+        }
+
+        return slow;
     }
 };
