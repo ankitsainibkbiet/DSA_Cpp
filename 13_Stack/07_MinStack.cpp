@@ -8,10 +8,6 @@ public:
     stack<pair<int, int>> s; 
     int smallest;
 
-    MinStack() {
-        
-    }
-    
     void push(int val) {
         if(s.empty()){
             smallest = val;
@@ -23,11 +19,7 @@ public:
     
     void pop() {
         s.pop();
-        if(s.empty()){
-            smallest;
-        }else{
-            smallest = s.top().second;
-        }
+        if(!s.empty()) smallest = s.top().second;
     }
     
     int top() {
