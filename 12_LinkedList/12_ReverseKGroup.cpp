@@ -12,6 +12,7 @@ struct ListNode {
 class Solution {
 public:
     ListNode* reverseKGroup(ListNode* head, int k) {
+        // check for k group 
         int curr = 0;
         ListNode* temp = head;
         while(curr < k){
@@ -20,8 +21,10 @@ public:
             curr++;
         }
 
+        // call for rest k groups of list
         ListNode* prevHead = reverseKGroup(temp, k);
 
+        // revser the first k group nodes
         temp = head;
         curr = 0;
         ListNode* tempNext;
