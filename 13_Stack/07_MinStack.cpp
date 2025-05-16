@@ -19,7 +19,7 @@ public:
     
     void pop() {
         s.pop();
-        if(!s.empty()) smallest = s.top().second;
+        if(!s.empty()) smallest = s.top().second;  // this is important to change smallest 
     }
     
     int top() {
