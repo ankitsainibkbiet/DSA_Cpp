@@ -3,7 +3,7 @@
 using namespace std;
 
 void spiralMatrix(){
-    vector<vector<int>> matrix = {{1,2,3,4}, {5,6,7,8}, {9,10,11,12}};
+    vector<vector<int>> matrix = {{1,2,3}, {5,6,7}, {9,10,11}};
     int m = matrix.size(), n = matrix[0].size();
     int rstart = 0, rend = m-1, cstart = 0, cend = n-1;
 

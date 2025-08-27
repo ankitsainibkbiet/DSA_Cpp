@@ -5,7 +5,7 @@ string convertString(string str){
     string result;
     for(char ch : str){
         if(isalnum(ch)){   // this is used to check alphanumeric character a-z|A-Z|0-9
-            result += tolower(ch);  // to make then lowerCase
+            result += tolower(ch);  // to make lowerCase
         }
     }
     return result;
