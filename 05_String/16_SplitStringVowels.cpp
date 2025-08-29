@@ -29,3 +29,9 @@ public:
         return false;
     }
 };
+
+int main(){
+    Solution s1;
+    cout<<s1.halvesAreAlike("Ankit");
+    return 0;
+}
