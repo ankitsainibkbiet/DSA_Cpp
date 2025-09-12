@@ -19,7 +19,7 @@ public:
 
 class boy : public Student{
 public:
-    void print(){  // function overridding
+    void print(){  // function overridding  this is also compile time polymorphisum without virtual
         cout<<"HelloWorld!"<<endl;
     }
 };
