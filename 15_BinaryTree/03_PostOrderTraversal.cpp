@@ -27,7 +27,7 @@ Node* binaryTree(vector<int> preOrder, int& idx){
 
 
 
-// PostOrderTraversal
+// PostOrder Traversal
 void postOrderTraversal(Node* root){
     if(root == NULL) return;
 
